@@ -35,7 +35,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, 'Noto Sans Tamil', 'Nirmala UI', 'Latha', sans-serif;
             color: var(--ink);
             background: var(--bg);
             line-height: 1.6;
@@ -172,6 +172,23 @@
 
         .nav-cta:hover {
             background: var(--blue) !important
+        }
+
+        .lang-toggle {
+            background: var(--navy);
+            color: #fff;
+            border: 0;
+            border-radius: 999px;
+            padding: 8px 16px;
+            font-size: .86rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: .15s;
+            margin-left: 6px
+        }
+
+        .lang-toggle:hover {
+            background: var(--blue)
         }
 
         .burger {
@@ -1241,15 +1258,16 @@
         <div class="wrap nav-inner">
             <div class="brand">
                 <div class="seal"><img src="images/logo.jpeg" alt="MLA Civic logo" /></div>
-                <div>MLA Civic<small>Constituency Platform</small></div>
+                <div>MLA Civic<small data-i18n="navsub">Constituency Platform</small></div>
             </div>
             <nav class="nav-links">
-                <a href="#modules">Platform</a>
-                <a href="#videos">Why It Works</a>
-                <a href="#app">The App</a>
-                <a href="#lifecycle">How it works</a>
-                <a href="#portal">MLA Dashboard</a>
+                <a href="#modules" data-i18n="navPlatform">Platform</a>
+                <a href="#videos" data-i18n="navWhy">Why It Works</a>
+                <a href="#app" data-i18n="navApp">The App</a>
+                <a href="#lifecycle" data-i18n="navHow">How it works</a>
+                <a href="#portal" data-i18n="navDash">MLA Dashboard</a>
             </nav>
+            <button id="langToggle" class="lang-toggle" aria-label="Switch language">தமிழ்</button>
             <button class="burger" aria-label="menu">&#9776;</button>
         </div>
     </header>
@@ -1258,18 +1276,18 @@
     <section class="hero">
         <div class="wrap hero-grid">
             <div>
-                <span class="tagline"><span class="dot"></span>Version 1 &middot; Constituency-Ready</span>
-                <h1>Your Voice.<br><span class="accent">Your Constituency.</span></h1>
-                <p class="sub">A centralized civic issue management platform connecting citizens, government staff,
+                <span class="tagline"><span class="dot"></span><span data-i18n="heroTag">Version 1 &middot; Constituency-Ready</span></span>
+                <h1 data-i18n="heroTitle">Your Voice.<br><span class="accent">Your Constituency.</span></h1>
+                <p class="sub" data-i18n="heroSub">A centralized civic issue management platform connecting citizens, government staff,
                     field technicians, and constituency leadership &mdash; from the first report to a verified
                     resolution.</p>
                 <div class="btn-row">
-                    <a href="#modules" class="btn btn-primary">Explore the Platform</a>
+                    <a href="#modules" class="btn btn-primary" data-i18n="btnExplore">Explore the Platform</a>
                 </div>
                 <div class="hero-stats">
-                    <div class="s"><b>1.2k</b><span>Tickets Raised</span></div>
-                    <div class="s"><b>94%</b><span>Resolved</span></div>
-                    <div class="s"><b>3 days</b><span>Avg. Response</span></div>
+                    <div class="s"><b>1.2k</b><span data-i18n="statRaised">Tickets Raised</span></div>
+                    <div class="s"><b>94%</b><span data-i18n="statResolved">Resolved</span></div>
+                    <div class="s"><b>3 days</b><span data-i18n="statResp">Avg. Response</span></div>
                 </div>
             </div>
 
@@ -1286,9 +1304,9 @@
     <section id="videos" class="life">
         <div class="wrap">
             <div class="center">
-                <span class="eyebrow">A Proven Model, Built for India</span>
-                <h2 class="title">Seen in action abroad. Made for our constituency.</h2>
-                <p class="lead">Citizens report local issues on camera and the government acts fast. MLA Civic brings
+                <span class="eyebrow" data-i18n="vidEyebrow">A Proven Model, Built for India</span>
+                <h2 class="title" data-i18n="vidTitle">Seen in action abroad. Made for our constituency.</h2>
+                <p class="lead" data-i18n="vidLead">Citizens report local issues on camera and the government acts fast. MLA Civic brings
                     that same public accountability to India.</p>
             </div>
             <div class="videos-grid">
@@ -1305,9 +1323,9 @@
                         </div>
                     </div>
                     <div class="vmeta">
-                        <span class="badge ref">The Inspiration</span>
-                        <h3>How it works abroad</h3>
-                        <p>A citizen posts civic issues online &mdash; and the government fixes them as quickly as
+                        <span class="badge ref" data-i18n="vidBadge1">The Inspiration</span>
+                        <h3 data-i18n="vidH1">How it works abroad</h3>
+                        <p data-i18n="vidP1">A citizen posts civic issues online &mdash; and the government fixes them as quickly as
                             possible. Real accountability, in full public view.</p>
                     </div>
                 </div>
@@ -1324,9 +1342,9 @@
                         </div>
                     </div>
                     <div class="vmeta">
-                        <span class="badge ours">Our Version</span>
-                        <h3>The same model, built for India</h3>
-                        <p>Our concept for MLA Civic &mdash; bringing this exact citizen-to-government loop to your own
+                        <span class="badge ours" data-i18n="vidBadge2">Our Version</span>
+                        <h3 data-i18n="vidH2">The same model, built for India</h3>
+                        <p data-i18n="vidP2">Our concept for MLA Civic &mdash; bringing this exact citizen-to-government loop to your own
                             constituency.</p>
                     </div>
                 </div>
@@ -1338,58 +1356,58 @@
     <section id="modules">
         <div class="wrap">
             <div class="center">
-                <span class="eyebrow">One Platform &middot; Four Roles</span>
-                <h2 class="title">Built for everyone in the loop</h2>
-                <p class="lead">Each role gets a purpose-built interface &mdash; while every ticket flows through a
+                <span class="eyebrow" data-i18n="modEyebrow">One Platform &middot; Four Roles</span>
+                <h2 class="title" data-i18n="modTitle">Built for everyone in the loop</h2>
+                <p class="lead" data-i18n="modLead">Each role gets a purpose-built interface &mdash; while every ticket flows through a
                     single, accountable system.</p>
             </div>
             <div class="mods">
                 <div class="mod c1">
-                    <span class="tag">Mobile App</span>
+                    <span class="tag" data-i18n="mod1tag">Mobile App</span>
                     <div class="ic">&#128241;</div>
-                    <h3>Citizen Application</h3>
-                    <p>Report and track local civic issues in a few taps, secured by mobile + OTP login.</p>
+                    <h3 data-i18n="mod1h">Citizen Application</h3>
+                    <p data-i18n="mod1p">Report and track local civic issues in a few taps, secured by mobile + OTP login.</p>
                     <ul>
-                        <li>Create tickets with photo &amp; GPS location</li>
-                        <li>Track status with a full timeline history</li>
-                        <li>Request escalation after 15 days unresolved</li>
-                        <li>Rate service &amp; reopen if the problem returns</li>
+                        <li data-i18n="mod1l1">Create tickets with photo &amp; GPS location</li>
+                        <li data-i18n="mod1l2">Track status with a full timeline history</li>
+                        <li data-i18n="mod1l3">Request escalation after 15 days unresolved</li>
+                        <li data-i18n="mod1l4">Rate service &amp; reopen if the problem returns</li>
                     </ul>
                 </div>
                 <div class="mod c2">
-                    <span class="tag">Web Portal</span>
+                    <span class="tag" data-i18n="mod2tag">Web Portal</span>
                     <div class="ic">&#127963;</div>
-                    <h3>Government Staff Portal</h3>
-                    <p>A clean administrative console to triage, assign, and resolve tickets efficiently.</p>
+                    <h3 data-i18n="mod2h">Government Staff Portal</h3>
+                    <p data-i18n="mod2p">A clean administrative console to triage, assign, and resolve tickets efficiently.</p>
                     <ul>
-                        <li>Powerful ticket table with search &amp; filters</li>
-                        <li>Assign, reassign, escalate &amp; set priority</li>
-                        <li>Internal staff-only notes (hidden from citizens)</li>
-                        <li>Verify completion before closing tickets</li>
+                        <li data-i18n="mod2l1">Powerful ticket table with search &amp; filters</li>
+                        <li data-i18n="mod2l2">Assign, reassign, escalate &amp; set priority</li>
+                        <li data-i18n="mod2l3">Internal staff-only notes (hidden from citizens)</li>
+                        <li data-i18n="mod2l4">Verify completion before closing tickets</li>
                     </ul>
                 </div>
                 <div class="mod c3">
-                    <span class="tag">Field Mobile</span>
+                    <span class="tag" data-i18n="mod3tag">Field Mobile</span>
                     <div class="ic">&#128295;</div>
-                    <h3>Field Technician Interface</h3>
-                    <p>Technicians see only their assigned work, with navigation and progress uploads.</p>
+                    <h3 data-i18n="mod3h">Field Technician Interface</h3>
+                    <p data-i18n="mod3p">Technicians see only their assigned work, with navigation and progress uploads.</p>
                     <ul>
-                        <li>View assigned tickets with priority &amp; location</li>
-                        <li>Open maps for on-site navigation</li>
-                        <li>Upload progress &amp; completion photos</li>
-                        <li>Submit for government verification &mdash; no direct close</li>
+                        <li data-i18n="mod3l1">View assigned tickets with priority &amp; location</li>
+                        <li data-i18n="mod3l2">Open maps for on-site navigation</li>
+                        <li data-i18n="mod3l3">Upload progress &amp; completion photos</li>
+                        <li data-i18n="mod3l4">Submit for government verification &mdash; no direct close</li>
                     </ul>
                 </div>
                 <div class="mod c4">
-                    <span class="tag">Dashboard</span>
+                    <span class="tag" data-i18n="mod4tag">Dashboard</span>
                     <div class="ic">&#128200;</div>
-                    <h3>MLA Dashboard</h3>
-                    <p>Constituency-level oversight and analytics &mdash; not day-to-day ticket handling.</p>
+                    <h3 data-i18n="mod4h">MLA Dashboard</h3>
+                    <p data-i18n="mod4p">Constituency-level oversight and analytics &mdash; not day-to-day ticket handling.</p>
                     <ul>
-                        <li>Overview metrics &amp; visual analytics</li>
-                        <li>Department performance &amp; resolution times</li>
-                        <li>Ward/area heatmaps &amp; escalated issues</li>
-                        <li>Downloadable monthly &amp; area reports</li>
+                        <li data-i18n="mod4l1">Overview metrics &amp; visual analytics</li>
+                        <li data-i18n="mod4l2">Department performance &amp; resolution times</li>
+                        <li data-i18n="mod4l3">Ward/area heatmaps &amp; escalated issues</li>
+                        <li data-i18n="mod4l4">Downloadable monthly &amp; area reports</li>
                     </ul>
                 </div>
             </div>
@@ -1400,27 +1418,27 @@
     <section id="app" class="life">
         <div class="wrap">
             <div class="center">
-                <span class="eyebrow">See MLA Civic in Action</span>
-                <h2 class="title">The citizen app, up close</h2>
-                <p class="lead">Real screens from the mobile application &mdash; branded to your constituency and built
+                <span class="eyebrow" data-i18n="showEyebrow">See MLA Civic in Action</span>
+                <h2 class="title" data-i18n="showTitle">The citizen app, up close</h2>
+                <p class="lead" data-i18n="showLead">Real screens from the mobile application &mdash; branded to your constituency and built
                     for a few-tap experience.</p>
             </div>
             <div class="showcase-grid">
                 <div class="shot">
                     <div class="device"><img src="images/1.jpeg" alt="MLA Civic splash screen" loading="lazy" /></div>
-                    <h4>Constituency Branding</h4>
-                    <p>A branded splash carrying the tagline &ldquo;Your Voice. Your Constituency.&rdquo;</p>
+                    <h4 data-i18n="show1h">Constituency Branding</h4>
+                    <p data-i18n="show1p">A branded splash carrying the tagline &ldquo;Your Voice. Your Constituency.&rdquo;</p>
                 </div>
                 <div class="shot">
                     <div class="device"><img src="images/2.jpeg" alt="MLA Civic home dashboard" loading="lazy" /></div>
-                    <h4>Home &amp; Quick Stats</h4>
-                    <p>The MLA welcome, live stats, My Tickets, and a bold Create Ticket action.</p>
+                    <h4 data-i18n="show2h">Home &amp; Quick Stats</h4>
+                    <p data-i18n="show2p">The MLA welcome, live stats, My Tickets, and a bold Create Ticket action.</p>
                 </div>
                 <div class="shot">
                     <div class="device"><img src="images/3.jpeg" alt="MLA Civic report an issue form" loading="lazy" />
                     </div>
-                    <h4>Report an Issue</h4>
-                    <p>Pick a category, add a title, attach a photo, and pin the GPS location.</p>
+                    <h4 data-i18n="show3h">Report an Issue</h4>
+                    <p data-i18n="show3p">Pick a category, add a title, attach a photo, and pin the GPS location.</p>
                 </div>
             </div>
         </div>
@@ -1430,52 +1448,52 @@
     <section id="lifecycle" class="life">
         <div class="wrap">
             <div class="center">
-                <span class="eyebrow">Core Ticket Lifecycle</span>
-                <h2 class="title">From report to verified resolution</h2>
-                <p class="lead">A structured, accountable workflow where every hand-off is tracked and the citizen stays
+                <span class="eyebrow" data-i18n="lifeEyebrow">Core Ticket Lifecycle</span>
+                <h2 class="title" data-i18n="lifeTitle">From report to verified resolution</h2>
+                <p class="lead" data-i18n="lifeLead">A structured, accountable workflow where every hand-off is tracked and the citizen stays
                     informed.</p>
             </div>
             <div class="flow">
                 <div class="step">
                     <div class="n">1</div>
-                    <div class="who">Citizen</div>
-                    <div class="act">Creates ticket</div><span class="arrow">&rarr;</span>
+                    <div class="who" data-i18n="step1who">Citizen</div>
+                    <div class="act" data-i18n="step1act">Creates ticket</div><span class="arrow">&rarr;</span>
                 </div>
                 <div class="step">
                     <div class="n">2</div>
-                    <div class="who">Gov Staff</div>
-                    <div class="act">Reviews &amp; assigns</div><span class="arrow">&rarr;</span>
+                    <div class="who" data-i18n="step2who">Gov Staff</div>
+                    <div class="act" data-i18n="step2act">Reviews &amp; assigns</div><span class="arrow">&rarr;</span>
                 </div>
                 <div class="step">
                     <div class="n">3</div>
-                    <div class="who">Technician</div>
-                    <div class="act">Performs work</div><span class="arrow">&rarr;</span>
+                    <div class="who" data-i18n="step3who">Technician</div>
+                    <div class="act" data-i18n="step3act">Performs work</div><span class="arrow">&rarr;</span>
                 </div>
                 <div class="step">
                     <div class="n">4</div>
-                    <div class="who">Technician</div>
-                    <div class="act">Uploads proof</div><span class="arrow">&rarr;</span>
+                    <div class="who" data-i18n="step4who">Technician</div>
+                    <div class="act" data-i18n="step4act">Uploads proof</div><span class="arrow">&rarr;</span>
                 </div>
                 <div class="step">
                     <div class="n">5</div>
-                    <div class="who">Gov Staff</div>
-                    <div class="act">Verifies &amp; closes</div><span class="arrow">&rarr;</span>
+                    <div class="who" data-i18n="step5who">Gov Staff</div>
+                    <div class="act" data-i18n="step5act">Verifies &amp; closes</div><span class="arrow">&rarr;</span>
                 </div>
                 <div class="step">
                     <div class="n">6</div>
-                    <div class="who">Citizen</div>
-                    <div class="act">Rates service</div>
+                    <div class="who" data-i18n="step6who">Citizen</div>
+                    <div class="act" data-i18n="step6act">Rates service</div>
                 </div>
             </div>
 
             <div class="statuses">
-                <div class="status-chip"><span class="d" style="background:#8a97a8"></span>Submitted</div>
-                <div class="status-chip"><span class="d" style="background:#1657a8"></span>Under Review</div>
-                <div class="status-chip"><span class="d" style="background:#1d6fb8"></span>Assigned</div>
-                <div class="status-chip"><span class="d" style="background:#f4a300"></span>In Progress</div>
-                <div class="status-chip"><span class="d" style="background:#1b8a5a"></span>Completed</div>
-                <div class="status-chip"><span class="d" style="background:#0f6b43"></span>Closed</div>
-                <div class="status-chip"><span class="d" style="background:#d64545"></span>Escalated</div>
+                <div class="status-chip"><span class="d" style="background:#8a97a8"></span><span data-i18n="stSubmitted">Submitted</span></div>
+                <div class="status-chip"><span class="d" style="background:#1657a8"></span><span data-i18n="stReview">Under Review</span></div>
+                <div class="status-chip"><span class="d" style="background:#1d6fb8"></span><span data-i18n="stAssigned">Assigned</span></div>
+                <div class="status-chip"><span class="d" style="background:#f4a300"></span><span data-i18n="stProgress">In Progress</span></div>
+                <div class="status-chip"><span class="d" style="background:#1b8a5a"></span><span data-i18n="stCompleted">Completed</span></div>
+                <div class="status-chip"><span class="d" style="background:#0f6b43"></span><span data-i18n="stClosed">Closed</span></div>
+                <div class="status-chip"><span class="d" style="background:#d64545"></span><span data-i18n="stEscalated">Escalated</span></div>
             </div>
         </div>
     </section>
@@ -1484,9 +1502,9 @@
     <section id="portal">
         <div class="wrap">
             <div class="center">
-                <span class="eyebrow">MLA Governance Dashboard</span>
-                <h2 class="title">Constituency oversight, at a glance</h2>
-                <p class="lead">A read-only governance view for constituency leadership &mdash; complaint analytics,
+                <span class="eyebrow" data-i18n="dashEyebrow">MLA Governance Dashboard</span>
+                <h2 class="title" data-i18n="dashTitle">Constituency oversight, at a glance</h2>
+                <p class="lead" data-i18n="dashLead">A read-only governance view for constituency leadership &mdash; complaint analytics,
                     ward-level mapping, department performance and escalated issues.</p>
             </div>
 
@@ -1499,7 +1517,7 @@
                     </div>
                     <img src="images/analytics.jpg"
                         alt="MLA Portal analytics: issue category breakdown and monthly trends" loading="lazy" />
-                    <div class="cap"><b>Analytics Overview</b> &mdash; issue category breakdown and monthly complaint
+                    <div class="cap" data-i18n="dashCap1"><b>Analytics Overview</b> &mdash; issue category breakdown and monthly complaint
                         trends.</div>
                 </div>
                 <div class="browser">
@@ -1510,7 +1528,7 @@
                     </div>
                     <img src="images/areamap.jpg" alt="MLA Portal constituency area map with category-coded ticket pins"
                         loading="lazy" />
-                    <div class="cap"><b>Constituency Area Map</b> &mdash; every ticket plotted and color-coded by
+                    <div class="cap" data-i18n="dashCap2"><b>Constituency Area Map</b> &mdash; every ticket plotted and color-coded by
                         category.</div>
                 </div>
             </div>
@@ -1521,39 +1539,39 @@
     <section>
         <div class="wrap">
             <div class="center">
-                <span class="eyebrow">Designed for Real Governance</span>
-                <h2 class="title">Thoughtful features, no noise</h2>
+                <span class="eyebrow" data-i18n="featEyebrow">Designed for Real Governance</span>
+                <h2 class="title" data-i18n="featTitle">Thoughtful features, no noise</h2>
             </div>
             <div class="feat-grid">
                 <div class="feat">
                     <div class="ic">&#128272;</div>
-                    <h4>Secure OTP Login</h4>
-                    <p>Citizens use mobile + OTP; staff verified by official email and admin approval.</p>
+                    <h4 data-i18n="feat1h">Secure OTP Login</h4>
+                    <p data-i18n="feat1p">Citizens use mobile + OTP; staff verified by official email and admin approval.</p>
                 </div>
                 <div class="feat">
                     <div class="ic">&#128205;</div>
-                    <h4>GPS &amp; Photo Reports</h4>
-                    <p>Every ticket carries a precise location and photo evidence for faster action.</p>
+                    <h4 data-i18n="feat2h">GPS &amp; Photo Reports</h4>
+                    <p data-i18n="feat2p">Every ticket carries a precise location and photo evidence for faster action.</p>
                 </div>
                 <div class="feat">
                     <div class="ic">&#128276;</div>
-                    <h4>Live Notifications</h4>
-                    <p>Citizens are notified at submit, assign, progress, completion and closure.</p>
+                    <h4 data-i18n="feat3h">Live Notifications</h4>
+                    <p data-i18n="feat3p">Citizens are notified at submit, assign, progress, completion and closure.</p>
                 </div>
                 <div class="feat">
                     <div class="ic">&#9201;</div>
-                    <h4>15-Day Escalation</h4>
-                    <p>Unresolved tickets unlock a &ldquo;Request Escalation&rdquo; option to protect citizens.</p>
+                    <h4 data-i18n="feat4h">15-Day Escalation</h4>
+                    <p data-i18n="feat4p">Unresolved tickets unlock a &ldquo;Request Escalation&rdquo; option to protect citizens.</p>
                 </div>
                 <div class="feat">
                     <div class="ic">&#128506;</div>
-                    <h4>Ward Heatmaps</h4>
-                    <p>Spot high-frequency complaint areas and target resources where they matter.</p>
+                    <h4 data-i18n="feat5h">Ward Heatmaps</h4>
+                    <p data-i18n="feat5p">Spot high-frequency complaint areas and target resources where they matter.</p>
                 </div>
                 <div class="feat">
                     <div class="ic">&#11088;</div>
-                    <h4>Ratings &amp; Feedback</h4>
-                    <p>A 1&ndash;5 star rating after closure keeps departments accountable to results.</p>
+                    <h4 data-i18n="feat6h">Ratings &amp; Feedback</h4>
+                    <p data-i18n="feat6p">A 1&ndash;5 star rating after closure keeps departments accountable to results.</p>
                 </div>
             </div>
         </div>
@@ -1563,30 +1581,30 @@
     <section class="life">
         <div class="wrap">
             <div class="center">
-                <span class="eyebrow">Version 1 Philosophy</span>
-                <h2 class="title">Simple. Operational. Scalable.</h2>
-                <p class="lead">A practical governance operations platform that can realistically be adopted at
+                <span class="eyebrow" data-i18n="philoEyebrow">Version 1 Philosophy</span>
+                <h2 class="title" data-i18n="philoTitle">Simple. Operational. Scalable.</h2>
+                <p class="lead" data-i18n="philoLead">A practical governance operations platform that can realistically be adopted at
                     constituency level.</p>
             </div>
             <div class="philo">
                 <div class="pcard keep">
-                    <h3><span class="b">&#10003;</span> What we focus on</h3>
+                    <h3><span class="b">&#10003;</span> <span data-i18n="keepH">What we focus on</span></h3>
                     <ul>
-                        <li>Usability for every kind of citizen</li>
-                        <li>Accountability at every step</li>
-                        <li>Structured, predictable workflows</li>
-                        <li>Transparency from report to resolution</li>
-                        <li>Scalability across wards &amp; departments</li>
+                        <li data-i18n="keep1">Usability for every kind of citizen</li>
+                        <li data-i18n="keep2">Accountability at every step</li>
+                        <li data-i18n="keep3">Structured, predictable workflows</li>
+                        <li data-i18n="keep4">Transparency from report to resolution</li>
+                        <li data-i18n="keep5">Scalability across wards &amp; departments</li>
                     </ul>
                 </div>
                 <div class="pcard avoid">
-                    <h3><span class="b">&#10007;</span> What we intentionally avoid</h3>
+                    <h3><span class="b">&#10007;</span> <span data-i18n="avoidH">What we intentionally avoid</span></h3>
                     <ul>
-                        <li>Complex social features</li>
-                        <li>Unrestricted messaging &amp; noise</li>
-                        <li>Excessive automation</li>
-                        <li>Unnecessary technical complexity</li>
-                        <li>Anything that slows real adoption</li>
+                        <li data-i18n="avoid1">Complex social features</li>
+                        <li data-i18n="avoid2">Unrestricted messaging &amp; noise</li>
+                        <li data-i18n="avoid3">Excessive automation</li>
+                        <li data-i18n="avoid4">Unnecessary technical complexity</li>
+                        <li data-i18n="avoid5">Anything that slows real adoption</li>
                     </ul>
                 </div>
             </div>
@@ -1597,11 +1615,11 @@
     <section id="get-started">
         <div class="wrap">
             <div class="cta-band">
-                <h2>Ready to strengthen your constituency?</h2>
-                <p>Bring citizens, staff, technicians and leadership onto one accountable platform &mdash; and turn
+                <h2 data-i18n="ctaTitle">Ready to strengthen your constituency?</h2>
+                <p data-i18n="ctaP">Bring citizens, staff, technicians and leadership onto one accountable platform &mdash; and turn
                     every report into visible action.</p>
                 <div class="btn-row" style="justify-content:center">
-                    <a href="#modules" class="btn btn-ghost"
+                    <a href="#modules" class="btn btn-ghost" data-i18n="btnExplore"
                         style="background:transparent;color:#fff;border-color:rgba(255,255,255,.4)">Explore the
                         Platform</a>
                 </div>
@@ -1614,9 +1632,9 @@
         <div class="wrap foot">
             <div class="brand">
                 <div class="seal"><img src="images/logo.jpeg" alt="MLA Civic logo" /></div>
-                <div>MLA Civic<small>Your Voice. Your Constituency.</small></div>
+                <div>MLA Civic<small data-i18n="footTag">Your Voice. Your Constituency.</small></div>
             </div>
-            <p>&copy; 2026 Civic Governance &amp; Constituency Management Platform &middot; Version 1</p>
+            <p data-i18n="footCopy">&copy; 2026 Civic Governance &amp; Constituency Management Platform &middot; Version 1</p>
         </div>
     </footer>
 
@@ -1699,6 +1717,149 @@
             }, { threshold: [0, 0.5, 1] });
             io.observe(frame);
         });
+
+        // ---- Tamil / English language toggle ----
+        const TA = {
+            navsub: 'தொகுதி தளம்',
+            navPlatform: 'தளம்',
+            navWhy: 'ஏன் செயல்படுகிறது',
+            navApp: 'செயலி',
+            navHow: 'எப்படி செயல்படுகிறது',
+            navDash: 'எம்எல்ஏ டாஷ்போர்டு',
+
+            heroTag: 'பதிப்பு 1 · தொகுதிக்குத் தயார்',
+            heroTitle: 'உங்கள் குரல்.<br><span class="accent">உங்கள் தொகுதி.</span>',
+            heroSub: 'குடிமக்கள், அரசு பணியாளர்கள், கள தொழில்நுட்ப வல்லுநர்கள் மற்றும் தொகுதித் தலைமையை இணைக்கும் ஒருங்கிணைந்த குடிமை பிரச்சினை மேலாண்மை தளம் — முதல் புகார் முதல் சரிபார்க்கப்பட்ட தீர்வு வரை.',
+            btnExplore: 'தளத்தை அறிக',
+            statRaised: 'பதிவான டிக்கெட்டுகள்',
+            statResolved: 'தீர்க்கப்பட்டது',
+            statResp: 'சராசரி பதில் நேரம்',
+
+            vidEyebrow: 'நிரூபிக்கப்பட்ட முன்மாதிரி, இந்தியாவுக்காக',
+            vidTitle: 'வெளிநாட்டில் செயலில் கண்டது. நமது தொகுதிக்காக உருவாக்கியது.',
+            vidLead: 'குடிமக்கள் உள்ளூர் பிரச்சினைகளை காணொளியில் பதிவு செய்கிறார்கள், அரசு விரைவாக செயல்படுகிறது. அதே பொது பொறுப்புணர்வை MLA Civic இந்தியாவுக்குக் கொண்டுவருகிறது.',
+            vidBadge1: 'உத்வேகம்',
+            vidH1: 'வெளிநாட்டில் எப்படி செயல்படுகிறது',
+            vidP1: 'ஒரு குடிமகன் குடிமை பிரச்சினைகளை ஆன்லைனில் பதிவிடுகிறார் — அரசு அவற்றை முடிந்தவரை விரைவாக சரிசெய்கிறது. உண்மையான பொறுப்புணர்வு, முழு பொது பார்வையில்.',
+            vidBadge2: 'எங்கள் பதிப்பு',
+            vidH2: 'அதே முன்மாதிரி, இந்தியாவுக்காக உருவாக்கியது',
+            vidP2: 'MLA Civic-க்கான எங்கள் கருத்து — இந்த குடிமகன்-முதல்-அரசு சுழற்சியை உங்கள் தொகுதிக்கு கொண்டுவருகிறது.',
+
+            modEyebrow: 'ஒரே தளம் · நான்கு பங்குகள்',
+            modTitle: 'அனைவருக்கும் உருவாக்கப்பட்டது',
+            modLead: 'ஒவ்வொரு பங்கிற்கும் தனித்தனி வடிவமைக்கப்பட்ட இடைமுகம் — ஒவ்வொரு டிக்கெட்டும் ஒரே பொறுப்பான அமைப்பின் வழியாக செல்கிறது.',
+            mod1tag: 'மொபைல் செயலி', mod1h: 'குடிமகன் செயலி',
+            mod1p: 'மொபைல் + OTP உள்நுழைவால் பாதுகாக்கப்பட்டு, சில தட்டல்களில் உள்ளூர் குடிமை பிரச்சினைகளைப் பதிவு செய்து கண்காணிக்கவும்.',
+            mod1l1: 'புகைப்படம் & GPS இடத்துடன் டிக்கெட்டுகளை உருவாக்கவும்',
+            mod1l2: 'முழு கால வரிசை வரலாற்றுடன் நிலையைக் கண்காணிக்கவும்',
+            mod1l3: '15 நாட்கள் தீராவிட்டால் மேல்முறையீட்டைக் கோரவும்',
+            mod1l4: 'சேவையை மதிப்பிடவும் & பிரச்சினை மீண்டும் வந்தால் மீண்டும் திறக்கவும்',
+            mod2tag: 'வலை போர்டல்', mod2h: 'அரசு பணியாளர் போர்டல்',
+            mod2p: 'டிக்கெட்டுகளைத் திறமையாக வரிசைப்படுத்த, ஒதுக்க, தீர்க்க தூய்மையான நிர்வாக பலகை.',
+            mod2l1: 'தேடல் & வடிகட்டிகளுடன் சக்திவாய்ந்த டிக்கெட் அட்டவணை',
+            mod2l2: 'ஒதுக்கு, மறு ஒதுக்கு, மேல்முறையீடு & முன்னுரிமை அமை',
+            mod2l3: 'உள் பணியாளர் மட்டும் குறிப்புகள் (குடிமக்களிடமிருந்து மறைக்கப்பட்டது)',
+            mod2l4: 'டிக்கெட்டுகளை மூடும் முன் நிறைவைச் சரிபார்க்கவும்',
+            mod3tag: 'கள மொபைல்', mod3h: 'கள தொழில்நுட்ப இடைமுகம்',
+            mod3p: 'தொழில்நுட்ப வல்லுநர்கள் தங்களுக்கு ஒதுக்கப்பட்ட வேலையை மட்டுமே பார்ப்பார்கள், வழிசெலுத்தல் மற்றும் முன்னேற்றப் பதிவேற்றங்களுடன்.',
+            mod3l1: 'முன்னுரிமை & இடத்துடன் ஒதுக்கப்பட்ட டிக்கெட்டுகளைப் பார்க்கவும்',
+            mod3l2: 'இடத்திற்கு வழிசெலுத்த வரைபடங்களைத் திறக்கவும்',
+            mod3l3: 'முன்னேற்றம் & நிறைவு புகைப்படங்களைப் பதிவேற்றவும்',
+            mod3l4: 'அரசு சரிபார்ப்புக்கு சமர்ப்பிக்கவும் — நேரடி மூடல் இல்லை',
+            mod4tag: 'டாஷ்போர்டு', mod4h: 'எம்எல்ஏ டாஷ்போர்டு',
+            mod4p: 'தொகுதி அளவிலான மேற்பார்வை மற்றும் பகுப்பாய்வு — அன்றாட டிக்கெட் கையாளுதல் அல்ல.',
+            mod4l1: 'மேலோட்ட அளவீடுகள் & காட்சி பகுப்பாய்வு',
+            mod4l2: 'துறை செயல்திறன் & தீர்வு நேரங்கள்',
+            mod4l3: 'வார்டு/பகுதி வெப்ப வரைபடங்கள் & மேல்முறையீட்டு பிரச்சினைகள்',
+            mod4l4: 'பதிவிறக்கக்கூடிய மாதாந்திர & பகுதி அறிக்கைகள்',
+
+            showEyebrow: 'MLA Civic-ஐ செயலில் பாருங்கள்',
+            showTitle: 'குடிமகன் செயலி, நெருக்கமாக',
+            showLead: 'மொபைல் செயலியின் உண்மையான திரைகள் — உங்கள் தொகுதிக்கு பிராண்டு செய்யப்பட்டு, சில தட்டல் அனுபவத்திற்காக உருவாக்கப்பட்டது.',
+            show1h: 'தொகுதி பிராண்டிங்',
+            show1p: '“உங்கள் குரல். உங்கள் தொகுதி.” என்ற வாசகத்தைச் சுமக்கும் பிராண்டு தொடக்கத் திரை.',
+            show2h: 'முகப்பு & விரைவு புள்ளிவிவரங்கள்',
+            show2p: 'எம்எல்ஏ வரவேற்பு, நேரடி புள்ளிவிவரங்கள், எனது டிக்கெட்டுகள், மற்றும் தெளிவான டிக்கெட் உருவாக்கம்.',
+            show3h: 'பிரச்சினையைப் புகாரளி',
+            show3p: 'வகையைத் தேர்ந்தெடுக்கவும், தலைப்பைச் சேர்க்கவும், புகைப்படத்தை இணைக்கவும், GPS இடத்தைக் குறிக்கவும்.',
+
+            lifeEyebrow: 'முக்கிய டிக்கெட் வாழ்க்கைச் சுழற்சி',
+            lifeTitle: 'புகார் முதல் சரிபார்க்கப்பட்ட தீர்வு வரை',
+            lifeLead: 'ஒவ்வொரு ஒப்படைப்பும் கண்காணிக்கப்பட்டு, குடிமகன் தகவல் அறிந்திருக்கும் கட்டமைக்கப்பட்ட, பொறுப்பான பணிப்பாய்வு.',
+            step1who: 'குடிமகன்', step1act: 'டிக்கெட் உருவாக்குகிறார்',
+            step2who: 'அரசு பணியாளர்', step2act: 'மதிப்பாய்வு & ஒதுக்கீடு',
+            step3who: 'தொழில்நுட்பர்', step3act: 'வேலை செய்கிறார்',
+            step4who: 'தொழில்நுட்பர்', step4act: 'சான்று பதிவேற்றுகிறார்',
+            step5who: 'அரசு பணியாளர்', step5act: 'சரிபார்த்து மூடுகிறார்',
+            step6who: 'குடிமகன்', step6act: 'சேவையை மதிப்பிடுகிறார்',
+            stSubmitted: 'சமர்ப்பிக்கப்பட்டது', stReview: 'மதிப்பாய்வில்', stAssigned: 'ஒதுக்கப்பட்டது',
+            stProgress: 'செயல்பாட்டில்', stCompleted: 'நிறைவடைந்தது', stClosed: 'மூடப்பட்டது', stEscalated: 'மேல்முறையீடு',
+
+            dashEyebrow: 'எம்எல்ஏ ஆளுகை டாஷ்போர்டு',
+            dashTitle: 'தொகுதி மேற்பார்வை, ஒரே பார்வையில்',
+            dashLead: 'தொகுதித் தலைமைக்கான படிக்க-மட்டும் ஆளுகை பார்வை — புகார் பகுப்பாய்வு, வார்டு அளவிலான வரைபடம், துறை செயல்திறன் மற்றும் மேல்முறையீட்டு பிரச்சினைகள்.',
+            dashCap1: '<b>பகுப்பாய்வு மேலோட்டம்</b> — பிரச்சினை வகை பிரிப்பு மற்றும் மாதாந்திர புகார் போக்குகள்.',
+            dashCap2: '<b>தொகுதி பகுதி வரைபடம்</b> — ஒவ்வொரு டிக்கெட்டும் வரையப்பட்டு வகை வாரியாக வண்ணமிடப்பட்டது.',
+
+            featEyebrow: 'உண்மையான ஆளுகைக்காக வடிவமைக்கப்பட்டது',
+            featTitle: 'சிந்தனையான அம்சங்கள், சத்தமில்லை',
+            feat1h: 'பாதுகாப்பான OTP உள்நுழைவு',
+            feat1p: 'குடிமக்கள் மொபைல் + OTP பயன்படுத்துகிறார்கள்; பணியாளர்கள் அதிகாரப்பூர்வ மின்னஞ்சல் மற்றும் நிர்வாக ஒப்புதலால் சரிபார்க்கப்படுகிறார்கள்.',
+            feat2h: 'GPS & புகைப்பட புகார்கள்',
+            feat2p: 'ஒவ்வொரு டிக்கெட்டும் விரைவான நடவடிக்கைக்காக துல்லியமான இடம் மற்றும் புகைப்பட ஆதாரத்தைச் சுமக்கிறது.',
+            feat3h: 'நேரடி அறிவிப்புகள்',
+            feat3p: 'சமர்ப்பிப்பு, ஒதுக்கீடு, முன்னேற்றம், நிறைவு மற்றும் மூடலின் போது குடிமக்களுக்கு அறிவிக்கப்படுகிறது.',
+            feat4h: '15 நாள் மேல்முறையீடு',
+            feat4p: 'தீராத டிக்கெட்டுகள் குடிமக்களைப் பாதுகாக்க “மேல்முறையீட்டைக் கோரு” விருப்பத்தைத் திறக்கின்றன.',
+            feat5h: 'வார்டு வெப்ப வரைபடங்கள்',
+            feat5p: 'அதிக அடிக்கடி புகார் பகுதிகளைக் கண்டறிந்து, தேவையான இடங்களில் வளங்களைக் குறிவைக்கவும்.',
+            feat6h: 'மதிப்பீடுகள் & கருத்து',
+            feat6p: 'மூடலுக்குப் பிறகு 1–5 நட்சத்திர மதிப்பீடு துறைகளை முடிவுகளுக்குப் பொறுப்பாக வைக்கிறது.',
+
+            philoEyebrow: 'பதிப்பு 1 தத்துவம்',
+            philoTitle: 'எளிமை. செயல்பாட்டு. அளவிடத்தக்கது.',
+            philoLead: 'தொகுதி அளவில் நடைமுறையில் ஏற்றுக்கொள்ளக்கூடிய நடைமுறை ஆளுகை செயல்பாட்டு தளம்.',
+            keepH: 'நாங்கள் கவனம் செலுத்துவது',
+            keep1: 'அனைத்து வகை குடிமக்களுக்கும் பயன்பாட்டுத்திறன்',
+            keep2: 'ஒவ்வொரு படியிலும் பொறுப்புணர்வு',
+            keep3: 'கட்டமைக்கப்பட்ட, முன்னறியக்கூடிய பணிப்பாய்வுகள்',
+            keep4: 'புகார் முதல் தீர்வு வரை வெளிப்படைத்தன்மை',
+            keep5: 'வார்டுகள் & துறைகள் முழுவதும் அளவிடுதிறன்',
+            avoidH: 'நாங்கள் வேண்டுமென்றே தவிர்ப்பது',
+            avoid1: 'சிக்கலான சமூக அம்சங்கள்',
+            avoid2: 'கட்டுப்பாடற்ற செய்தி & சத்தம்',
+            avoid3: 'அதிகப்படியான தானியக்கம்',
+            avoid4: 'தேவையற்ற தொழில்நுட்ப சிக்கல்',
+            avoid5: 'உண்மையான ஏற்பை மெதுவாக்கும் எதுவும்',
+
+            ctaTitle: 'உங்கள் தொகுதியை வலுப்படுத்தத் தயாரா?',
+            ctaP: 'குடிமக்கள், பணியாளர்கள், தொழில்நுட்ப வல்லுநர்கள் மற்றும் தலைமையை ஒரே பொறுப்பான தளத்தில் கொண்டு வாருங்கள் — ஒவ்வொரு புகாரையும் தெரியும் நடவடிக்கையாக மாற்றுங்கள்.',
+
+            footTag: 'உங்கள் குரல். உங்கள் தொகுதி.',
+            footCopy: '© 2026 குடிமை ஆளுகை & தொகுதி மேலாண்மை தளம் · பதிப்பு 1'
+        };
+
+        const i18nEls = document.querySelectorAll('[data-i18n]');
+        i18nEls.forEach(el => { el.dataset.en = el.innerHTML; });
+        const langBtn = document.getElementById('langToggle');
+
+        function setLang(lang) {
+            i18nEls.forEach(el => {
+                const k = el.getAttribute('data-i18n');
+                if (lang === 'ta' && TA[k] != null) el.innerHTML = TA[k];
+                else el.innerHTML = el.dataset.en;
+            });
+            document.documentElement.lang = lang;
+            if (langBtn) langBtn.textContent = lang === 'ta' ? 'English' : 'தமிழ்';
+            try { localStorage.setItem('mlacivic_lang', lang); } catch (e) { }
+        }
+
+        langBtn && langBtn.addEventListener('click', () => {
+            const cur = document.documentElement.lang === 'ta' ? 'ta' : 'en';
+            setLang(cur === 'ta' ? 'en' : 'ta');
+        });
+
+        try { if (localStorage.getItem('mlacivic_lang') === 'ta') setLang('ta'); } catch (e) { }
     </script>
 </body>
 
